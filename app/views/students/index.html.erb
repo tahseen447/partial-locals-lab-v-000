@@ -2,3 +2,7 @@
   <%= text_field_tag :query %>
   <%= submit_tag 'Search' %>
 <% end %>
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
