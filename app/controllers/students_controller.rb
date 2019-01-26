@@ -15,17 +15,13 @@ class StudentsController < ApplicationController
   def edit
     @student = Student.find(params[:id])
   end
-
+  
   def show
     @student = Student.find(params[:id])
   end
 
   def index
-    @students = if params[:query]
-      Student.where('name LIKE?', "%#{params[:query]}%")
-    else
-      Students.all
-    end
+    @students = Student.search(params[:query])
   end
 
   def student_params
