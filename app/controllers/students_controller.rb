@@ -25,6 +25,7 @@ class StudentsController < ApplicationController
       Student.where('name LIKE?', "%#{params[:query]}%")
     else
       Students.all
+    end
   end
 
   def student_params
